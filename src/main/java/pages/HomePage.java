@@ -1,0 +1,33 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import utils.DriverFactory;
+
+import java.awt.*;
+
+public class HomePage extends BasePage{
+    private By signupLoginButton=By.xpath("//a[@href=\"/login\"]");
+    private By deleteAccountButton=By.xpath("//a[@href=\"/delete_account\"]");
+    private By continueButton=By.xpath("//a[@data-qa=\"continue-button\"]");
+    private By logoutButton=By.xpath("//a[@href=\"/logout\"]");
+    public HomePage(WebDriver driver) throws AWTException {
+        super(driver);
+    }
+    public HomePage signupLogin(){
+        click(signupLoginButton);
+        return this;
+    }
+    public HomePage deleteAccount(){
+        click(deleteAccountButton);
+        return this;
+    }
+    public HomePage clickContinue(){
+        click(continueButton);
+        return this;
+    }
+    public HomePage clickLogout(){
+        click(logoutButton);
+        return this;
+    }
+}
