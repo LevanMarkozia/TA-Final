@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.time.Duration;
 
 public class BasePage {
@@ -43,5 +44,8 @@ public class BasePage {
         robot.keyPress(KeyEvent.VK_A);
         robot.keyRelease(KeyEvent.VK_A);
         robot.keyRelease(KeyEvent.VK_CONTROL);
+    }
+    protected void upload(By locator,File file){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(file.getAbsolutePath());
     }
 }

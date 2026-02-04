@@ -11,6 +11,8 @@ public class HomePage extends BasePage{
     private By deleteAccountButton=By.xpath("//a[@href=\"/delete_account\"]");
     private By continueButton=By.xpath("//a[@data-qa=\"continue-button\"]");
     private By logoutButton=By.xpath("//a[@href=\"/logout\"]");
+    private By contactUsButton=By.xpath("//a[@href=\"/contact_us\"]");
+    private By testCasesButton=By.xpath("//a[@href=\"/test_cases\"]");
     public HomePage(WebDriver driver) throws AWTException {
         super(driver);
     }
@@ -28,6 +30,14 @@ public class HomePage extends BasePage{
     }
     public HomePage clickLogout(){
         click(logoutButton);
+        return this;
+    }
+    public HomePage clickContactUs(){
+        click(contactUsButton);
+        return this;
+    }
+    public HomePage clickTestCases(){
+        click(testCasesButton);
         return this;
     }
 }
