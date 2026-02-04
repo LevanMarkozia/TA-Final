@@ -18,7 +18,7 @@ public class LoginCorrectTest extends TestBase {
     public void test1() throws AWTException {
         WebDriver driver=DriverFactory.getDriver();
         driver.get("https://automationexercise.com/");
-        String email="tempaccount192837465@mail.com",password="12345678"; //
+        String email="tempaccount192837465@mail.com",password="12345678";
         Assert.assertEquals(driver.findElement(By.xpath("//a[@style=\"color: orange;\"][@href=\"/\"]")).getText(),"Home");
         HomePage homePage=new HomePage(driver)
                 .signupLogin();
