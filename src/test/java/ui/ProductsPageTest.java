@@ -13,7 +13,7 @@ import utils.DriverFactory;
 import java.awt.*;
 
 public class ProductsPageTest extends TestBase {
-    @Description("Verify that the products cases page is displayed and the product detail page works correctly")
+    @Description("Verify that the products page is displayed and the product detail page works correctly")
     @Test
     public void test1() throws AWTException {
         WebDriver driver= DriverFactory.getDriver();
