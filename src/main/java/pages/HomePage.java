@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import java.awt.*;
@@ -13,6 +14,8 @@ public class HomePage extends BasePage{
     private By contactUsButton=By.xpath("//a[@href=\"/contact_us\"]");
     private By testCasesButton=By.xpath("//a[@href=\"/test_cases\"]");
     private By productsButton=By.xpath("//a[@href=\"/products\"]");
+    private By subscriptionInput=By.id("susbscribe_email");
+    private By subscriptionButton=By.id("subscribe");
     public HomePage(WebDriver driver) throws AWTException {
         super(driver);
     }
@@ -42,6 +45,16 @@ public class HomePage extends BasePage{
     }
     public HomePage clickProducts(){
         click(productsButton);
+        return this;
+    }
+    public HomePage scrollToBottom(){
+        JavascriptExecutor js=(JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)","");
+        return this;
+    }
+    public HomePage subscribeToNewsletter(String email){
+        type(subscriptionInput,email);
+        click(subscriptionButton);
         return this;
     }
 }
