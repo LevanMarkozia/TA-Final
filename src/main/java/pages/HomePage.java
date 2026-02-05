@@ -13,6 +13,7 @@ public class HomePage extends BasePage{
     private By logoutButton=By.xpath("//a[@href=\"/logout\"]");
     private By contactUsButton=By.xpath("//a[@href=\"/contact_us\"]");
     private By testCasesButton=By.xpath("//a[@href=\"/test_cases\"]");
+    private By productsButton=By.xpath("//a[@href=\"/products\"]");
     public HomePage(WebDriver driver) throws AWTException {
         super(driver);
     }
@@ -38,6 +39,10 @@ public class HomePage extends BasePage{
     }
     public HomePage clickTestCases(){
         click(testCasesButton);
+        return this;
+    }
+    public HomePage clickProducts(){
+        click(productsButton);
         return this;
     }
 }
