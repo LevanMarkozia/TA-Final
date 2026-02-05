@@ -50,21 +50,6 @@ public class SignupPage extends BasePage{
         selectYear.selectByValue(year);
         return this;
     }
-    public SignupPage enterDay(String day){
-        Select select=new Select(driver.findElement(dobDay));
-        select.selectByValue(day);
-        return this;
-    }
-    public SignupPage enterMonth(int month){
-        Select select=new Select(driver.findElement(dobMonth));
-        select.selectByIndex(month);
-        return this;
-    }
-    public SignupPage enterYear(String year){
-        Select select=new Select(driver.findElement(dobYear));
-        select.selectByValue(year);
-        return this;
-    }
     public SignupPage enterPassword(String password){
         type(passwordInput,password);
         return this;

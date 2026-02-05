@@ -19,7 +19,7 @@ public class LoginCorrectTest extends TestBase {
         WebDriver driver=DriverFactory.getDriver();
         driver.get("https://automationexercise.com/");
         String email="tempaccount192837465@mail.com",password="12345678";
-        Assert.assertEquals(driver.findElement(By.xpath("//a[@style=\"color: orange;\"][@href=\"/\"]")).getText(),"Home");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/");
         HomePage homePage=new HomePage(driver)
                 .signupLogin();
         Assert.assertTrue(driver.findElement(By.xpath("//h2[text()=\"New User Signup!\"]")).isDisplayed());

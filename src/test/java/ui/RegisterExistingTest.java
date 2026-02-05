@@ -2,15 +2,12 @@ package ui;
 
 import base.TestBase;
 import io.qameta.allure.Description;
-import io.qameta.allure.internal.shadowed.jackson.annotation.JsonTypeInfo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
-import pages.SignupPage;
 import utils.DriverFactory;
 
 import java.awt.*;
@@ -23,7 +20,7 @@ public class RegisterExistingTest extends TestBase {
         driver.get("https://automationexercise.com/");
         int dobMonth=6;
         String name="dohnjoe",email="hdfivhc7vh872htdj@mail.com";
-        Assert.assertEquals(driver.findElement(By.xpath("//a[@style=\"color: orange;\"][@href=\"/\"]")).getText(),"Home");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/");
         HomePage homePage=new HomePage(driver)
                 .signupLogin();
         Assert.assertTrue(driver.findElement(By.xpath("//h2[text()=\"New User Signup!\"]")).isDisplayed());

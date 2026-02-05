@@ -9,7 +9,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ContactPage;
 import pages.HomePage;
-import pages.LoginPage;
 import utils.DriverFactory;
 
 import java.awt.*;
@@ -23,7 +22,7 @@ public class ContactFormTest extends TestBase {
         driver.get("https://automationexercise.com/");
         String name="name",email="dahfivzcuhjfhj@mail.com",subject="subject",message="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet luctus bibendum. Pellentesque suscipit finibus metus, ac finibus nisi facilisis quis. Curabitur euismod sem nec neque mattis molestie. Nulla et rutrum ipsum, in tincidunt massa. Nullam efficitur ante at vulputate sollicitudin. Mauris aliquet mattis est, sed egestas diam vulputate vel. Nullam consequat molestie commodo. Aliquam dignissim ac diam id tincidunt. Fusce nisi velit, aliquam ac rutrum volutpat, vehicula sed dui. Sed quis lectus et nunc rutrum consequat. Nullam elementum elementum lacus ac tempus. Nulla sed mauris nisi. Cras quis bibendum odio.";
         File uploadFile=new File("src/test/resources/img/image.png");
-        Assert.assertEquals(driver.findElement(By.xpath("//a[@style=\"color: orange;\"][@href=\"/\"]")).getText(),"Home");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/");
         HomePage homePage=new HomePage(driver)
                 .clickContactUs();
         Assert.assertTrue(driver.findElement(By.xpath("//h2[text()=\"Get In Touch\"]")).isDisplayed());
@@ -35,6 +34,6 @@ public class ContactFormTest extends TestBase {
         alert.accept();
         Assert.assertTrue(driver.findElement(By.xpath("//div[text()=\"Success! Your details have been submitted successfully.\"]")).isDisplayed());
         contactPage.clickHome();
-        Assert.assertEquals(driver.findElement(By.xpath("//a[@style=\"color: orange;\"][@href=\"/\"]")).getText(),"Home");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/");
     }
 }

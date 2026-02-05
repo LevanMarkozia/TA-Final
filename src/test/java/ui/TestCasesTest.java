@@ -2,12 +2,10 @@ package ui;
 
 import base.TestBase;
 import io.qameta.allure.Description;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.ContactPage;
 import pages.HomePage;
 import utils.DriverFactory;
 
@@ -19,7 +17,7 @@ public class TestCasesTest extends TestBase {
     public void test1() throws AWTException {
         WebDriver driver= DriverFactory.getDriver();
         driver.get("https://automationexercise.com/");
-        Assert.assertEquals(driver.findElement(By.xpath("//a[@style=\"color: orange;\"][@href=\"/\"]")).getText(),"Home");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/");
         HomePage homePage=new HomePage(driver)
                 .clickTestCases();
         Assert.assertTrue(driver.findElement(By.xpath("//b[text()=\"Test Cases\"]")).isDisplayed());

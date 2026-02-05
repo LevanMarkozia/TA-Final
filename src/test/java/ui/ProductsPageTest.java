@@ -21,7 +21,7 @@ public class ProductsPageTest extends TestBase {
         Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/");
         HomePage homePage=new HomePage(driver)
                 .clickProducts();
-        Assert.assertEquals(driver.findElement(By.xpath("//a[@style=\"color: orange;\"][@href=\"/products\"]")).getText(),"\uE8F8 Products");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/products");
         Assert.assertTrue(driver.findElement(By.className("features_items")).isDisplayed());
         ProductsPage productsPage=new ProductsPage(driver)
                 .scrollDown(3)

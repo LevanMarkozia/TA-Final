@@ -19,7 +19,7 @@ public class LogoutTest extends TestBase {
         WebDriver driver=DriverFactory.getDriver();
         driver.get("https://automationexercise.com/");
         String email="hdfivhc7vh872htdj@mail.com",password="12345678";
-        Assert.assertEquals(driver.findElement(By.xpath("//a[@style=\"color: orange;\"][@href=\"/\"]")).getText(),"Home");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/");
         HomePage homePage=new HomePage(driver)
                 .signupLogin();
         Assert.assertTrue(driver.findElement(By.xpath("//h2[text()=\"New User Signup!\"]")).isDisplayed());
@@ -29,6 +29,6 @@ public class LogoutTest extends TestBase {
                 .clickLogin();
         Assert.assertTrue(driver.findElement(By.xpath("//*[contains(.,\"Logged in as\")]")).isDisplayed());
         homePage.clickLogout();
-        Assert.assertTrue(driver.findElement(By.xpath("//a[@style=\"color: orange;\"][@href=\"/login\"]")).isDisplayed());
+        Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/login");
     }
 }
