@@ -18,7 +18,7 @@ public class ContactFormTest extends TestBase {
     @Description("Fill the Contact Us form and verify that the process is successful")
     @Test
     public void test1() throws AWTException {
-        WebDriver driver= DriverFactory.getDriver();
+        WebDriver driver=DriverFactory.getDriver();
         driver.get("https://automationexercise.com/");
         String name="name",email="dahfivzcuhjfhj@mail.com",subject="subject",message="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet luctus bibendum. Pellentesque suscipit finibus metus, ac finibus nisi facilisis quis. Curabitur euismod sem nec neque mattis molestie. Nulla et rutrum ipsum, in tincidunt massa. Nullam efficitur ante at vulputate sollicitudin. Mauris aliquet mattis est, sed egestas diam vulputate vel. Nullam consequat molestie commodo. Aliquam dignissim ac diam id tincidunt. Fusce nisi velit, aliquam ac rutrum volutpat, vehicula sed dui. Sed quis lectus et nunc rutrum consequat. Nullam elementum elementum lacus ac tempus. Nulla sed mauris nisi. Cras quis bibendum odio.";
         File uploadFile=new File("src/test/resources/img/image.png");

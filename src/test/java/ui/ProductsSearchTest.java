@@ -17,7 +17,7 @@ public class ProductsSearchTest extends TestBase {
     @Description("Verify that product search works correctly")
     @Test
     public void test1() throws AWTException {
-        WebDriver driver= DriverFactory.getDriver();
+        WebDriver driver=DriverFactory.getDriver();
         String query="Bl";
         driver.get("https://automationexercise.com/");
         Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/");
