@@ -15,7 +15,7 @@ public class VerifySubscriptionHomeTest extends TestBase {
     @Description("Attempt to subscribe to the newsletter from the Home page")
     @Test
     public void test1() throws AWTException {
-        WebDriver driver= DriverFactory.getDriver();
+        WebDriver driver=DriverFactory.getDriver();
         String email="iahivuhcuyzcvni@mail.com";
         driver.get("https://automationexercise.com/");
         Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/");
