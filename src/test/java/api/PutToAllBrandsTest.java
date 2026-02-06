@@ -1,6 +1,7 @@
 package api;
 
 import client.StoreClient;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -13,10 +14,12 @@ public class PutToAllBrandsTest {
     @Description("Attempt to put to the list of all brands")
     @Test
     public void test1(){
+        Allure.step("Send a PUT request to /brandsList");
         Response response=storeClient.putToAllBrands();
         response.then()
                 .log().all()
                 .statusCode(200);
+        Allure.step("Parse the response and check the response code");
         String html=response.getBody().asString();
         String json=html.substring(html.indexOf("{"),html.lastIndexOf("}")+1);
         JsonPath jp=new JsonPath(json);

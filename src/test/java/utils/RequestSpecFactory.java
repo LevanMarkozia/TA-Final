@@ -1,6 +1,7 @@
 package utils;
 
 import config.ConfigManager;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
@@ -11,6 +12,7 @@ public final class RequestSpecFactory {
     public static RequestSpecification defaultJsonSpec() {
         return new RequestSpecBuilder()
                 .setBaseUri(ConfigManager.get("base.url"))
+                .addFilter(new AllureRestAssured())
                 .setContentType(ContentType.JSON)
                 .log(LogDetail.ALL)
                 .build();
