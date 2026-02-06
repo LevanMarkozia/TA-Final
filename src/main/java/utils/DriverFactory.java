@@ -8,21 +8,21 @@ import java.io.File;
 import java.time.Duration;
 
 public class DriverFactory {
-    private static WebDriver driver;
+    private static ThreadLocal<WebDriver> driver=new ThreadLocal<>();
     public static WebDriver getDriver(){
-        return driver;
+        return driver.get();
     }
     public static void initDriver(){
         ChromeOptions options=new ChromeOptions();
         options.addExtensions(new File("./Extensions/DDKJIAHEJLHFCAFBDDMGIAHCPHECMPFH_2026_125_1931_0.crx"));
-        driver=new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.set(new ChromeDriver(options));
+        driver.get().manage().window().maximize();
+        driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
     public static void quitDriver(){
-//        if(driver!=null){
-//            driver.quit();
-//            driver=null;
-//        }
+        if(driver.get()!=null){
+            driver.get().quit();
+            driver.remove();
+        }
     }
 }
