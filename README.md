@@ -13,4 +13,4 @@ Test failure screenshots can be found in the bottom of the test defect overview,
 
 API requests and responses can be found in the test body in their respective drop-down menus.
 
-Running LoginCorrectTest (test case 2) once will require you to create the account again if you want to run it again. Otherwise the test will fail.
+After running LoginCorrectTest (test case 2) once, you will be required to re-create the account if you want to run it again. Otherwise the repeated test will fail.
